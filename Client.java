@@ -12,6 +12,8 @@ public class Client extends JFrame{
 	private String message = "";
 	private String serverIP;
 	private Socket connection;
+	private JTextField search;
+	private Browser br;
 
 	// Constructor
 	public Client(String host){
@@ -27,9 +29,22 @@ public class Client extends JFrame{
 				}
 			}
 		);
+		search = new JTextField();
+		search.setEditable(true);
+		search.setText("Quick search");
+		search.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent event){
+					br = new Browser();
+					br.pseudoMain(br, formatForGoogle(event.getActionCommand()));
+					search.setText("");
+				}
+			}
+		);
 		add(userText, BorderLayout.NORTH);
+		add(search, BorderLayout.SOUTH);
 		chatWindow = new JTextArea();
-		add(new JScrollPane(chatWindow), BorderLayout.CENTER);
+		add(new JScrollPane(chatWindow));
 		setSize(480, 360);
 		setVisible(true);
 	}
@@ -121,5 +136,18 @@ public class Client extends JFrame{
 				}
 			}
 		);	
-	}	
+	}
+
+	
+	private String formatForGoogle(String plain){
+		String def = "https://in.search.yahoo.com/search?p=";//"http://www.google.com/search?q=";
+		String[] words = plain.split(" ");
+
+		for(String word: words){
+			def+=(word+"+");
+		}
+		
+		return def;
+		
+	}
 }

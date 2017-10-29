@@ -12,6 +12,9 @@ public class Server extends JFrame{
 	// Creates streams for data output and output.
 	private ObjectOutputStream output;
 	private ObjectInputStream input;
+	// Creating a JTextField for quick search feature
+	private JTextField search;
+	private Browser br;
 
 	private ServerSocket server;
 	private Socket connection;
@@ -19,6 +22,7 @@ public class Server extends JFrame{
 	public Server(){
 		super("Better than whatsapp/telegram/others");
 		userText = new JTextField();
+		
 		// The textfield is not editable by default
 		// The textfield becomes editable only when connected
 		// to another user
@@ -31,7 +35,20 @@ public class Server extends JFrame{
 				}
 			}
 		);
+		search = new JTextField();
+		search.setEditable(true);
+		search.setText("Quick search");
+		search.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent event){
+					br = new Browser();
+					br.pseudoMain(br, formatForGoogle(event.getActionCommand()));
+					search.setText("");
+				}
+			}
+		);
 		add(userText, BorderLayout.NORTH);
+		add(search, BorderLayout.SOUTH);
 		chatWindow = new JTextArea();
 		add(new JScrollPane(chatWindow));
 		setSize(480, 360);
@@ -134,5 +151,17 @@ public class Server extends JFrame{
 				}
 			}
 		);
+	}
+
+	private String formatForGoogle(String plain){
+		String def = "https://in.search.yahoo.com/search?p=";//"http://www.google.com/search?q=";
+		String[] words = plain.split(" ");
+
+		for(String word: words){
+			def+=(word+"+");
+		}
+		
+		return def;
+		
 	}
 }
