@@ -1,0 +1,208 @@
+\section{Server Class Reference}
+\label{class_server}\index{Server@{Server}}
+Inheritance diagram for Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_server}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Server} ()
+\item 
+void {\bf begin\+Program} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf wait\+For\+Connection} ()  throws I\+O\+Exception
+\item 
+void {\bf setup\+Streams} ()  throws I\+O\+Exception
+\item 
+void {\bf while\+Chatting} ()  throws I\+O\+Exception
+\item 
+void {\bf end\+Program} ()
+\item 
+void {\bf send\+Message} (String message)
+\item 
+void {\bf show\+Message} (final String text)
+\item 
+void {\bf allow\+Typing} (final boolean flag)
+\item 
+String {\bf format\+For\+Google} (String plain)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+J\+Text\+Field {\bfseries user\+Text}\label{class_server_abf4d769d3d5587c9c441584cb1b39072}
+
+\item 
+J\+Text\+Area {\bfseries chat\+Window}\label{class_server_aec39cc324f8dba244a8f1997577ad24b}
+
+\item 
+Object\+Output\+Stream {\bfseries output}\label{class_server_a3ee83f3537ecb91aaa128c67a666197e}
+
+\item 
+Object\+Input\+Stream {\bfseries input}\label{class_server_ab08c327e4eb98bfcc9e99322ab95e962}
+
+\item 
+J\+Text\+Field {\bfseries search}\label{class_server_a09e54dd47266f5d46b8726440fcb3d06}
+
+\item 
+Browser {\bfseries br}\label{class_server_a54ffafdfbaccc84064973e51381c18cb}
+
+\item 
+Server\+Socket {\bfseries server}\label{class_server_a24129ae964202c8df4ecccdb97080b0c}
+
+\item 
+Socket {\bfseries connection}\label{class_server_acecb2d29750ac0ac276a90fab96a84ab}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsection*{The Main \doxyref{Server}{p.}{class_server} Class}
+
+This class is called when a \doxyref{Server}{p.}{class_server} instance is launched. \begin{DoxyAuthor}{Author}
+Advait Raykar, Vishwa Kalyanaraman, Parv Kapoor 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+5th November 2017 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\subsubsection[{Server()}]{\setlength{\rightskip}{0pt plus 5cm}Server.\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_server_a0523b403c83475114d3be0143f3321ad}
+This is the constructor, which intialises the actual window, adds the necessary action listners, and adds the swing elements to the window. 
+
+\subsection{Member Function Documentation}
+\index{Server@{Server}!allow\+Typing@{allow\+Typing}}
+\index{allow\+Typing@{allow\+Typing}!Server@{Server}}
+\subsubsection[{allow\+Typing(final boolean flag)}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+allow\+Typing (
+\begin{DoxyParamCaption}
+\item[{final boolean}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a37ff153817bab08ab4a9c91aa9f9848f}
+Should typing be allowed? 
+\begin{DoxyParams}{Parameters}
+{\em flag} & True/\+False value \\
+\hline
+\end{DoxyParams}
+\index{Server@{Server}!begin\+Program@{begin\+Program}}
+\index{begin\+Program@{begin\+Program}!Server@{Server}}
+\subsubsection[{begin\+Program()}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+begin\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_server_ad3059b8fec91bbc05bf9c9bbcfd2e880}
+This method when called does the following three things\+: 
+\begin{DoxyItemize}
+\item Waits for a client to connect 
+\item Sets up all the required streams 
+\item Makes sure messages are sent and recieved properly 
+\end{DoxyItemize}\index{Server@{Server}!end\+Program@{end\+Program}}
+\index{end\+Program@{end\+Program}!Server@{Server}}
+\subsubsection[{end\+Program()}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+end\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a6c370d3eb9fa4b5d9805c451da3fc49c}
+Closes all the streams after severing connections with the client. \index{Server@{Server}!format\+For\+Google@{format\+For\+Google}}
+\index{format\+For\+Google@{format\+For\+Google}!Server@{Server}}
+\subsubsection[{format\+For\+Google(\+String plain)}]{\setlength{\rightskip}{0pt plus 5cm}String Server.\+format\+For\+Google (
+\begin{DoxyParamCaption}
+\item[{String}]{plain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_aad9c759285859f7ce8bcd6ad6f020e35}
+Formats the user query into a form that yeilds search results in the browser 
+\begin{DoxyParams}{Parameters}
+{\em plain} & The plaintext to be searched. \\
+\hline
+\end{DoxyParams}
+\index{Server@{Server}!send\+Message@{send\+Message}}
+\index{send\+Message@{send\+Message}!Server@{Server}}
+\subsubsection[{send\+Message(\+String message)}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+send\+Message (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a24de04f64d373247d2ab1fdfe2477dc8}
+Sends the message to the output stream object 
+\begin{DoxyParams}{Parameters}
+{\em message} & This is the message that is to be sent downstream. \\
+\hline
+\end{DoxyParams}
+\index{Server@{Server}!setup\+Streams@{setup\+Streams}}
+\index{setup\+Streams@{setup\+Streams}!Server@{Server}}
+\subsubsection[{setup\+Streams()}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+setup\+Streams (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a2daa10694033f06fa97d1f62129dccce}
+Creates an
+\begin{DoxyCode}
+ObjectOutputStream 
+\end{DoxyCode}
+ object and an
+\begin{DoxyCode}
+ObjectInputStream 
+\end{DoxyCode}
+ object for sending and recieving messages 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\index{Server@{Server}!show\+Message@{show\+Message}}
+\index{show\+Message@{show\+Message}!Server@{Server}}
+\subsubsection[{show\+Message(final String text)}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+show\+Message (
+\begin{DoxyParamCaption}
+\item[{final String}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a10e393183360a25f9687448e4bdddd44}
+This prints out the message on the chat window so it\textquotesingle{}s visible to the user. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to be displayed \\
+\hline
+\end{DoxyParams}
+\index{Server@{Server}!wait\+For\+Connection@{wait\+For\+Connection}}
+\index{wait\+For\+Connection@{wait\+For\+Connection}!Server@{Server}}
+\subsubsection[{wait\+For\+Connection()}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+wait\+For\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a7e5f40ab891af8ed2a0e0a1ccee85397}
+Waits for connection on starting the server. 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\index{Server@{Server}!while\+Chatting@{while\+Chatting}}
+\index{while\+Chatting@{while\+Chatting}!Server@{Server}}
+\subsubsection[{while\+Chatting()}]{\setlength{\rightskip}{0pt plus 5cm}void Server.\+while\+Chatting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [private]}}\label{class_server_a555be7f59ba6ca27e964e42f07cdf23e}
+Manages calls to
+\begin{DoxyCode}
+showMessage() 
+\end{DoxyCode}
+ Note, the prgram quits connection when user inputs {\itshape  xoxo } which is slang for {\itshape  \textquotesingle{}hearts and kisses\textquotesingle{} } 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server.\+java\end{DoxyCompactItemize}

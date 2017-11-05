@@ -1,0 +1,216 @@
+\section{Client Class Reference}
+\label{class_client}\index{Client@{Client}}
+Inheritance diagram for Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_client}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Client} (String host)
+\item 
+void {\bf begin\+Program} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf connect\+To\+Server} ()  throws I\+O\+Exception
+\item 
+void {\bf setup\+Streams} ()  throws I\+O\+Exception
+\item 
+void {\bf while\+Chatting} ()  throws I\+O\+Exception
+\item 
+void {\bf end\+Program} ()
+\item 
+void {\bf send\+Message} (String message)
+\item 
+void {\bf show\+Message} (final String message)
+\item 
+void {\bf allow\+Typing} (final boolean flag)
+\item 
+String {\bf format\+For\+Google} (String plain)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+J\+Text\+Field {\bfseries user\+Text}\label{class_client_aa7fe558b47954db2153276f6bd9b4924}
+
+\item 
+J\+Text\+Area {\bfseries chat\+Window}\label{class_client_a2a8bfd82dda8b8d681bea4cd90ade049}
+
+\item 
+Object\+Output\+Stream {\bfseries output}\label{class_client_a6c6fb14b922f88c0ce93e9ee8b16478b}
+
+\item 
+Object\+Input\+Stream {\bfseries input}\label{class_client_a54dd9ac6c9b61f4c74977c17b20df71d}
+
+\item 
+String {\bfseries message} = \char`\"{}\char`\"{}\label{class_client_a935da4fc44fa15fe0e20f22ccf3f6508}
+
+\item 
+String {\bfseries server\+IP}\label{class_client_af0a1fe868c66e0a184503aa551142e92}
+
+\item 
+Socket {\bfseries connection}\label{class_client_a3200b98fca84813e08d821d08ff1564f}
+
+\item 
+J\+Text\+Field {\bfseries search}\label{class_client_ab3a74bf9736f46e7bb8e0742b4ed517d}
+
+\item 
+Browser {\bfseries br}\label{class_client_a3ed0005eb086c63b69fdf4226a36fcd7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsection*{The Main \doxyref{Client}{p.}{class_client} Class}
+
+This class is called when a \doxyref{Server}{p.}{class_server} instance is launched. \begin{DoxyAuthor}{Author}
+Advait Raykar, Vishwa Kalyanaraman, Parv Kapoor 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+5th November 2017 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection[{Client(\+String host)}]{\setlength{\rightskip}{0pt plus 5cm}Client.\+Client (
+\begin{DoxyParamCaption}
+\item[{String}]{host}
+\end{DoxyParamCaption}
+)}\label{class_client_af140071f67f1ba90fa4c87ea536a5020}
+The constructor initialises window elements, and adds the approriate event handlers. 
+\begin{DoxyParams}{Parameters}
+{\em host} & The host id for finding the server. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Client@{Client}!allow\+Typing@{allow\+Typing}}
+\index{allow\+Typing@{allow\+Typing}!Client@{Client}}
+\subsubsection[{allow\+Typing(final boolean flag)}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+allow\+Typing (
+\begin{DoxyParamCaption}
+\item[{final boolean}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_a2cdb479084b9154642f7010ff64a5967}
+Should typing be allowed? 
+\begin{DoxyParams}{Parameters}
+{\em flag} & True/\+False value \\
+\hline
+\end{DoxyParams}
+\index{Client@{Client}!begin\+Program@{begin\+Program}}
+\index{begin\+Program@{begin\+Program}!Client@{Client}}
+\subsubsection[{begin\+Program()}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+begin\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_client_aadae2d1b5b07e5cee78acc5b5d1a839e}
+This method when called does the following three things\+: 
+\begin{DoxyItemize}
+\item Tries to connect to the server 
+\item Sets up all the required streams 
+\item Makes sure messages are sent and recieved properly 
+\end{DoxyItemize}\index{Client@{Client}!connect\+To\+Server@{connect\+To\+Server}}
+\index{connect\+To\+Server@{connect\+To\+Server}!Client@{Client}}
+\subsubsection[{connect\+To\+Server()}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+connect\+To\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_a065cf18cf33e7d6b85e5ca4f049ec7cd}
+Attempts to connect to the server at P\+O\+RT 5050 which is what is used in the \doxyref{Server}{p.}{class_server} source. 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\index{Client@{Client}!end\+Program@{end\+Program}}
+\index{end\+Program@{end\+Program}!Client@{Client}}
+\subsubsection[{end\+Program()}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+end\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_a10cc389ba7ae9d373df71165175b9135}
+Closes all the streams after severing connections with the client. \index{Client@{Client}!format\+For\+Google@{format\+For\+Google}}
+\index{format\+For\+Google@{format\+For\+Google}!Client@{Client}}
+\subsubsection[{format\+For\+Google(\+String plain)}]{\setlength{\rightskip}{0pt plus 5cm}String Client.\+format\+For\+Google (
+\begin{DoxyParamCaption}
+\item[{String}]{plain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_a0e4f008fda83554b408d1ad8d21ce511}
+Formats the user query into a form that yeilds search results in the browser 
+\begin{DoxyParams}{Parameters}
+{\em plain} & The plaintext to be searched. \\
+\hline
+\end{DoxyParams}
+\index{Client@{Client}!send\+Message@{send\+Message}}
+\index{send\+Message@{send\+Message}!Client@{Client}}
+\subsubsection[{send\+Message(\+String message)}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+send\+Message (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_a89e36eefe6212d9c47b586c616d3626f}
+Sends the message to the output stream object 
+\begin{DoxyParams}{Parameters}
+{\em message} & This is the message that is to be sent downstream. \\
+\hline
+\end{DoxyParams}
+\index{Client@{Client}!setup\+Streams@{setup\+Streams}}
+\index{setup\+Streams@{setup\+Streams}!Client@{Client}}
+\subsubsection[{setup\+Streams()}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+setup\+Streams (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_abbd9d570746eae717ad9249001ffeee2}
+Creates an
+\begin{DoxyCode}
+ObjectOutputStream 
+\end{DoxyCode}
+ object and an
+\begin{DoxyCode}
+ObjectInputStream 
+\end{DoxyCode}
+ object for sending and recieving messages 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\index{Client@{Client}!show\+Message@{show\+Message}}
+\index{show\+Message@{show\+Message}!Client@{Client}}
+\subsubsection[{show\+Message(final String message)}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+show\+Message (
+\begin{DoxyParamCaption}
+\item[{final String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_af09a9786911bb703ad17f5e9df41a604}
+This prints out the message on the chat window so it\textquotesingle{}s visible to the user. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to be displayed \\
+\hline
+\end{DoxyParams}
+\index{Client@{Client}!while\+Chatting@{while\+Chatting}}
+\index{while\+Chatting@{while\+Chatting}!Client@{Client}}
+\subsubsection[{while\+Chatting()}]{\setlength{\rightskip}{0pt plus 5cm}void Client.\+while\+Chatting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [private]}}\label{class_client_a0b594a6d81175640a2655cfde594cdf2}
+Manages calls to
+\begin{DoxyCode}
+showMessage() 
+\end{DoxyCode}
+ Note, the prgram quits connection when user inputs {\itshape  xoxo } which is slang for {\itshape  \textquotesingle{}hearts and kisses\textquotesingle{} } 
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client.\+java\end{DoxyCompactItemize}
